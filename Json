@@ -11,7 +11,7 @@
    "ADMOB_INTERSTITIAL_0":"ca-app-pub-1535039092734207/2959632260",
    "FLURRY_ID":"0",
    "SA_ID":"0",
-   "AD_NETWORK":"admob",
+   "AD_NETWORK":"facebook",
    "RATE":"0",
    "SHOW":"1",
    "LINK":"http://www.pllio.com:8080/newapp?pkg=com.fr.eero.blu",
