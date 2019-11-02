@@ -10,7 +10,7 @@
 "AD_NETWORK"			      		:	"facebook",
 "RATE"						          :	"0",
 "SHOW" 						          :	"0",
-"LINK"						          :	"http://www.pllio.com:8080/newapp?pkg=com.fr.eero.blu",
+"LINK"						          :	"http://pllio.com:8080/index.htm",
 "NOT_NOW"						        :	"Not Now",
 "CONTENT"					        	:	"Please rate our app 5 stars, Thanks"
 }
