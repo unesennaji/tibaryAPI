@@ -9,7 +9,7 @@
 "SA_ID"	 					          :	"0",
 "AD_NETWORK"			      		:	"facebook",
 "RATE"						          :	"0",
-"SHOW" 						          :	"0",
+"SHOW" 						          :	"1",
 "LINK"						          :	"http://www.pllio.com:8080/newapp?pkg=com.fr.eero.blu",
 "NOT_NOW"						        :	"Not Now",
 "CONTENT"					        	:	"Please rate our app 5 stars, Thanks"
