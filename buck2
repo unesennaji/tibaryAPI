@@ -8,7 +8,7 @@
 "FLURRY_ID"			       		:	"0",
 "SA_ID"	 					          :	"0",
 "AD_NETWORK"			      		:	"facebook",
-"RATE"						          :	"0",
+"RATE"						          :	"1",
 "SHOW" 						          :	"1",
 "LINK"						          :	"http://www.pllio.com:8080/newapp?pkg=com.fr.eero.blu",
 "NOT_NOW"						        :	"Not Now",
