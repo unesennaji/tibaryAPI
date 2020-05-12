@@ -1,0 +1,565 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": " Swagger for Subscription type of Payments on JCCgateway ",
+    "version": "1.0.0",
+    "title": " JCCgateway Subscription payments Swagger"
+  },
+  "host": "localhost:18080",
+  "basePath": "/PgRestful",
+  "tags": [
+    {
+      "name": "InitializeSubscription",
+      "description": "Initialize Subscription"
+    },
+    {
+      "name": "UpdateSubscription",
+      "description": "Update Subscription"
+    },
+    {
+      "name": "MassScaleUpdate",
+      "description": "Amount Mass Scale Update"
+    },
+    {
+      "name": "SubscriptionDetail",
+      "description": "Get Subscription Detail"
+    },
+    {
+      "name": "SubscriptionTxns",
+      "description": "Get Subscription Txns"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/Subscriptions/Create": {
+      "post": {
+        "tags": [
+          "InitializeSubscription"
+        ],
+        "summary": "Create a new subscription",
+        "description": "",
+        "operationId": "Create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Object needed to create a new subscription",
+            "required": true,
+            "schema": {
+              "$ref": "#/Subscriptions/Create"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "schema": {
+              "$ref": "#/Subscriptions/CreateRes"
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/Subscriptions/Update": {
+      "post": {
+        "tags": [
+          "InitializeSubscription"
+        ],
+        "summary": "Update an existing Subscription",
+        "description": "",
+        "operationId": "Update",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "bject needed to update an existing subscription",
+            "required": true,
+            "schema": {
+              "$ref": "#/Subscriptions/Update"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "schema": {
+              "$ref": "#/Subscriptions/CreateRes"
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/Subscriptions/MassUpdate": {
+      "post": {
+        "tags": [
+          "InitializeSubscription"
+        ],
+        "summary": "Mass Update of amount for existing Subscriptions",
+        "description": "",
+        "operationId": "MassUpdate",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Object needed to update the amount on multiple existing Subscriptions",
+            "required": true,
+            "schema": {
+              "$ref": "#/Subscriptions/MassUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "schema": {
+              "$ref": "#/Subscriptions/MassUpdateRes"
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/SubscriptionDetail/GetSubscriptionDetails": {
+      "post": {
+        "tags": [
+          "SubscriptionDetail"
+        ],
+        "summary": "get Subscription Detail",
+        "description": "Retrieve the details of a specific Subscription",
+        "operationId": "GetSubscriptionDetailse",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Object needed to Retrieve the details of a specific Subscriptions",
+            "required": true,
+            "schema": {
+              "$ref": "#/SubscriptionDetail/GetSubscriptionDetails"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "schema": {
+              "$ref": "#/SubscriptionDetail/GetSubscriptionDetailsRes"
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    },
+    "/SubscriptionTxns/GetSubscriptionTxns": {
+      "post": {
+        "tags": [
+          "GetSubscriptionTxns"
+        ],
+        "summary": "get Subscription Txns",
+        "description": "Retrieve the transactions that were processed for a specific Subscription",
+        "operationId": "GetSubscriptionTxns",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Object needed to retrieve the transactions that were processed for a specific Subscriptions",
+            "required": true,
+            "schema": {
+              "$ref": "#/SubscriptionTxns/GetSubscriptionTxns"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response",
+            "schema": {
+              "$ref": "#/SubscriptionTxns/GetSubscriptionTxnsRes"
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "APIKeyHeader": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "hmacauth"
+    }
+  },
+  "Subscriptions": {
+    "Create": {
+      "type": "object",
+      "properties": {
+        "recordID": {
+          "type": "string"
+        },
+        "merID": {
+          "type": "string"
+        },
+        "orderID": {
+          "type": "string"
+        },
+        "executionDate": {
+          "type": "string"
+        },
+        "numberOfPayments": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "customerID": {
+          "type": "string"
+        },
+        "subscriptionID": {
+          "type": "string"
+        },
+        "txnType": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "txnAmount": {
+          "type": "string"
+        },
+        "txnCurrency": {
+          "type": "string"
+        },
+        "subscriptionAmount": {
+          "type": "string"
+        },
+        "subscriptionCurrency": {
+          "type": "string"
+        },
+        "captureFlag": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateRes": {
+      "type": "object",
+      "properties": {
+        "responseCode": {
+          "type": "string"
+        },
+        "responseDescription": {
+          "type": "string"
+        },
+        "paddedCardNo": {
+          "type": "string"
+        },
+        "cardExpiryMonth": {
+          "type": "string"
+        },
+        "cardExpiryYear": {
+          "type": "string"
+        }
+      }
+    },
+    "Update": {
+      "type": "object",
+      "properties": {
+        "recordID": {
+          "type": "string"
+        },
+        "merID": {
+          "type": "string"
+        },
+        "subscriptionID": {
+          "type": "string"
+        },
+        "numberOfPayments": {
+          "type": "string"
+        },
+        "period": {
+          "type": "string"
+        },
+        "customerID": {
+          "type": "string"
+        },
+        "txnType": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        },
+        "subscriptionAmount": {
+          "type": "string"
+        },
+        "subscriptionCurrency": {
+          "type": "string"
+        },
+        "subscriptionStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "MassUpdate": {
+      "type": "object",
+      "properties": {
+        "recordID": null,
+        "type": "string",
+        "merID": {
+          "type": "string"
+        },
+        "subscriptionIDList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "subscriptionAmount": {
+          "type": "string"
+        },
+        "subscriptionCurrency": {
+          "type": "string"
+        }
+      }
+    },
+    "MassUpdateRes": {
+      "type": "object",
+      "properties": {
+        "responseCode": {
+          "type": "string"
+        },
+        "responseDescription": {
+          "type": "string"
+        },
+        "failedSubscriptions": {
+          "$ref": "#/Subscriptions/FailedSubscription"
+        }
+      }
+    },
+    "FailedSubscription": {
+      "type": "object",
+      "properties": {
+        "subscriptionID": {
+          "type": "string"
+        },
+        "failureReason": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "SubscriptionDetail": {
+    "GetSubscriptionDetails": {
+      "type": "object",
+      "properties": {
+        "recordID": {
+          "type": "string"
+        },
+        "merID": {
+          "type": "string"
+        },
+        "subscriptionID": {
+          "type": "string"
+        }
+      }
+    },
+    "GetSubscriptionDetailsRes": {
+      "type": "object",
+      "properties": {
+        "responseCode": {
+          "type": "string"
+        },
+        "responseDescription": {
+          "type": "string"
+        },
+        "subscriptionStatus": {
+          "type": "string"
+        },
+        "cancellationReason": {
+          "type": "string"
+        },
+        "subscriptionTotalPayments": {
+          "type": "string"
+        },
+        "subscriptionCurrentPaymentNum": {
+          "type": "string"
+        },
+        "subscriptionExecutionDate": {
+          "type": "string"
+        },
+        "subscriptionPeriod": {
+          "type": "string"
+        },
+        "subscriptionToken": {
+          "type": "string"
+        },
+        "subscriptionCardExpiryMonth": {
+          "type": "string"
+        },
+        "subscriptionCardExpiryYear": {
+          "type": "string"
+        },
+        "subscriptionCustomerID": {
+          "type": "string"
+        },
+        "subscriptionNextRetry": {
+          "type": "string"
+        },
+        "subscriptionLastRetry": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "SubscriptionTxns": {
+    "GetSubscriptionTxns": {
+      "type": "object",
+      "properties": {
+        "recordID": {
+          "type": "string"
+        },
+        "merID": {
+          "type": "string"
+        },
+        "subscriptionID": {
+          "type": "string"
+        },
+        "fromDate": {
+          "type": "string"
+        },
+        "toDate": {
+          "type": "string"
+        },
+        "orderID": {
+          "type": "string"
+        },
+        "customerID": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "GetSubscriptionTxnsRes": {
+      "type": "object",
+      "properties": {
+        "responseCode": {
+          "type": "string"
+        }
+      },
+      "responseDescription": {
+        "type": "string"
+      },
+      "transactions": {
+        "$ref": "#/SubscriptionTxns/Transaction"
+      }
+    },
+    "Transaction": {
+      "type": "object",
+      "properties": {
+        "merchantOrderID": {
+          "type": "string"
+        },
+        "acquirerOrderID": {
+          "type": "string"
+        },
+        "referenceNumber": {
+          "type": "string"
+        },
+        "authCode": {
+          "type": "string"
+        },
+        "isAuthorized": {
+          "type": "string"
+        },
+        "isFullyCaptured": {
+          "type": "string"
+        },
+        "iSReversed": {
+          "type": "string"
+        },
+        "capturedAmount": {
+          "type": "string"
+        },
+        "reversedAmount": {
+          "type": "string"
+        },
+        "refundAmount": {
+          "type": "string"
+        },
+        "txnAmount": {
+          "type": "string"
+        },
+        "txnCurrency": {
+          "type": "string"
+        },
+        "uTCTxnDate": {
+          "type": "string"
+        },
+        "paddedCardNo": {
+          "type": "string"
+        },
+        "cardExpiryMonth": {
+          "type": "string"
+        },
+        "cardExpiryYear": {
+          "type": "string"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
